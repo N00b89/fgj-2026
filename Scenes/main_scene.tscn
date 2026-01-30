@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dolrnhyo7cagp"]
+
+[ext_resource type="Script" uid="uid://cj3m1ygnptqhs" path="res://Scripts/main_scene.gd" id="1_6l7je"]
+[ext_resource type="PackedScene" uid="uid://c86ugk62daqvo" path="res://Scenes/game_menu.tscn" id="2_jv6wh"]
+[ext_resource type="Script" uid="uid://dry24nynh71xy" path="res://Scripts/character_body_2d.gd" id="3_jv6wh"]
+[ext_resource type="Texture2D" uid="uid://d2gl4yq1ketad" path="res://icon.svg" id="4_x6ack"]
+
+[node name="Main Scene" type="CanvasLayer"]
+script = ExtResource("1_6l7je")
+
+[node name="Game Menu" parent="." instance=ExtResource("2_jv6wh")]
+visible = false
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("3_jv6wh")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(578, 272)
+texture = ExtResource("4_x6ack")
