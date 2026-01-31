@@ -1,21 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://by8103nhxne8o"]
+[gd_scene load_steps=18 format=3 uid="uid://by8103nhxne8o"]
 
 [ext_resource type="Script" uid="uid://ddlmdgr862ekq" path="res://Scripts/character_holder.gd" id="1_k841r"]
 [ext_resource type="Script" uid="uid://7hjxcrkco6xw" path="res://Scenes/screenshake.gd" id="1_uj1fo"]
 [ext_resource type="Script" uid="uid://47d2s2d2rcad" path="res://Scripts/AnimController.gd" id="3_ghytx"]
 [ext_resource type="Script" uid="uid://dftuwumnummdp" path="res://Scripts/NPCData.gd" id="3_gp04v"]
 [ext_resource type="Texture2D" uid="uid://cwgsj1rklt1ll" path="res://Assets/Characters/Art/Illustration52 (1).png" id="4_ghytx"]
-[ext_resource type="Resource" uid="uid://pc6pfcp7p14l" path="res://Placeholders/Hat1.tres" id="4_ip5rw"]
-[ext_resource type="Resource" uid="uid://bf8afbffoj2ls" path="res://Placeholders/Tshirt1.tres" id="5_o4fp0"]
 [ext_resource type="Resource" uid="uid://jb3y8fhv55c0" path="res://Resources/Characters/GentleMan1.tres" id="5_ogb8q"]
-[ext_resource type="Resource" uid="uid://c2nhakb8pu5f3" path="res://Placeholders/Pants1.tres" id="6_6act6"]
 [ext_resource type="Resource" uid="uid://uv1mvmigsavq" path="res://Resources/Characters/GentleMan2.tres" id="6_81w0h"]
-[ext_resource type="Resource" uid="uid://bksiosijoqqy0" path="res://Placeholders/Shoes1.tres" id="7_nsh33"]
 [ext_resource type="Shader" uid="uid://4veedejpn06l" path="res://Scenes/Wiggly.gdshader" id="7_ogb8q"]
 [ext_resource type="Texture2D" uid="uid://b2r2mnq7bx6mj" path="res://Shaders/noise2.png" id="8_81w0h"]
 [ext_resource type="Texture2D" uid="uid://v3askt4420xf" path="res://Assets/Characters/Art/Illustration52 (3).png" id="10_ohmnt"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ip5rw"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gp04v"]
+size = Vector2(450, 550)
 
 [sub_resource type="Animation" id="Animation_gp04v"]
 length = 0.001
@@ -89,8 +86,8 @@ tracks/2/path = NodePath("AnimationPlayer")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.16382706, 0.36671224, 0.5666667, 0.73333335, 0.90000004, 0.9001),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.16382706, 0.36671224, 0.5666667, 0.73333335, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
 "method": &"_playStep"
@@ -107,11 +104,8 @@ tracks/2/keys = {
 "args": [],
 "method": &"_playStep"
 }, {
-"args": ["flip"],
+"args": [],
 "method": &"_playStep"
-}, {
-"args": [""],
-"method": &"_playSound"
 }]
 }
 tracks/3/type = "value"
@@ -220,31 +214,14 @@ shader_parameter/frames = 4.000000142499999
 script = ExtResource("1_uj1fo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.5409905, 0.5409905, 0.5409905, 1)
-z_index = 11
-z_as_relative = false
-position = Vector2(1.999939, 244.5)
-scale = Vector2(1236, 243)
-texture = SubResource("CanvasTexture_ip5rw")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = 15
-position = Vector2(275.00003, 22.000002)
-scale = Vector2(418.00003, 538.00006)
-texture = SubResource("CanvasTexture_ip5rw")
+position = Vector2(278, -5)
+texture = SubResource("PlaceholderTexture2D_gp04v")
 
-[node name="CharacterHolder" type="Node" parent="." node_paths=PackedStringArray("character_sprite", "headParent", "bodyParent", "lowerParent", "shoeParent", "anim_player")]
+[node name="CharacterHolder" type="Node" parent="." node_paths=PackedStringArray("character_sprite", "anim_player")]
 script = ExtResource("1_k841r")
 character_sprite = NodePath("AnimationPlayer/TransformParent/Sprite2D")
 initData = ExtResource("5_ogb8q")
-debugItem1 = ExtResource("4_ip5rw")
-debugItem2 = ExtResource("5_o4fp0")
-debugItem3 = ExtResource("6_6act6")
-debugItem4 = ExtResource("7_nsh33")
-headParent = NodePath("AnimationPlayer/TransformParent/Sprite2D/Head_Cloth")
-bodyParent = NodePath("AnimationPlayer/TransformParent/Sprite2D/Body_Cloth")
-lowerParent = NodePath("AnimationPlayer/TransformParent/Sprite2D/Lower_Cloth")
-shoeParent = NodePath("AnimationPlayer/TransformParent/Sprite2D/Shoe_Cloth")
 npc_list = Array[ExtResource("3_gp04v")]([ExtResource("5_ogb8q"), ExtResource("6_81w0h"), ExtResource("5_ogb8q"), ExtResource("6_81w0h")])
 anim_player = NodePath("AnimationPlayer")
 
@@ -265,15 +242,6 @@ texture = ExtResource("4_ghytx")
 
 [node name="FlipOff" type="Sprite2D" parent="CharacterHolder/AnimationPlayer/TransformParent/Sprite2D"]
 visible = false
-modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_81w0h")
 position = Vector2(77.519356, 101.888596)
 texture = ExtResource("10_ohmnt")
-
-[node name="Head_Cloth" type="Sprite2D" parent="CharacterHolder/AnimationPlayer/TransformParent/Sprite2D"]
-
-[node name="Body_Cloth" type="Sprite2D" parent="CharacterHolder/AnimationPlayer/TransformParent/Sprite2D"]
-
-[node name="Lower_Cloth" type="Sprite2D" parent="CharacterHolder/AnimationPlayer/TransformParent/Sprite2D"]
-
-[node name="Shoe_Cloth" type="Sprite2D" parent="CharacterHolder/AnimationPlayer/TransformParent/Sprite2D"]
