@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=3 format=3 uid="uid://jb3y8fhv55c0"]
+
+[ext_resource type="Script" uid="uid://dftuwumnummdp" path="res://Scripts/NPCData.gd" id="1_o3v61"]
+[ext_resource type="Texture2D" uid="uid://cwgsj1rklt1ll" path="res://Illustration52 (1).png" id="2_dodir"]
+
+[resource]
+script = ExtResource("1_o3v61")
+npc_name = "Gentleman1"
+sprite = ExtResource("2_dodir")
+metadata/_custom_type_script = "uid://dftuwumnummdp"

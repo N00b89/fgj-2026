@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bnimclye1ctoh"]
+
+[ext_resource type="Script" uid="uid://b46sxqet018c1" path="res://Scripts/ItemData.gd" id="1_nehei"]
+[ext_resource type="Texture2D" uid="uid://bqntrnuh45c1v" path="res://Illustration52 (2).png" id="2_l1pqi"]
+
+[resource]
+script = ExtResource("1_nehei")
+name = "Shirt"
+sprite = ExtResource("2_l1pqi")
+metadata/_custom_type_script = "uid://b46sxqet018c1"
