@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciroa85oojkht"]
+
+[ext_resource type="Script" uid="uid://bbli1rw7hvwa3" path="res://Scripts/speech_bubble.gd" id="1_jhvau"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6p6bn"]
+bg_color = Color(0.5370113, 0.5370113, 0.5370113, 1)
+
+[node name="Speech Bubble" type="TextEdit"]
+anchors_preset = -1
+anchor_left = 0.344
+anchor_top = 0.201
+anchor_right = 0.97
+anchor_bottom = 0.377
+offset_left = -0.2880249
+offset_top = -0.2480011
+offset_right = 0.5599365
+offset_bottom = -0.29600525
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_6p6bn")
+script = ExtResource("1_jhvau")
