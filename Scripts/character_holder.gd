@@ -33,7 +33,6 @@ func _completeDress():
 		print("Guy is chill")
 	else:
 		print("Guy just died")
-		
 	_createCharacter(npc_list[npcIndex])
 	npcIndex+=1
 	

@@ -1,0 +1,204 @@
+[gd_scene load_steps=17 format=3 uid="uid://by8103nhxne8o"]
+
+[ext_resource type="Script" uid="uid://ddlmdgr862ekq" path="res://Scripts/character_holder.gd" id="1_k841r"]
+[ext_resource type="Script" uid="uid://7hjxcrkco6xw" path="res://Scenes/screenshake.gd" id="1_uj1fo"]
+[ext_resource type="Script" path="res://Scripts/AnimController.gd" id="3_ghytx"]
+[ext_resource type="Script" uid="uid://dftuwumnummdp" path="res://Scripts/NPCData.gd" id="3_gp04v"]
+[ext_resource type="Texture2D" uid="uid://cwgsj1rklt1ll" path="res://Assets/Characters/Art/Illustration52 (1).png" id="4_ghytx"]
+[ext_resource type="Resource" uid="uid://jb3y8fhv55c0" path="res://Resources/Characters/GentleMan1.tres" id="5_ogb8q"]
+[ext_resource type="Resource" uid="uid://uv1mvmigsavq" path="res://Resources/Characters/GentleMan2.tres" id="6_81w0h"]
+[ext_resource type="Shader" uid="uid://4veedejpn06l" path="res://Scenes/Wiggly.gdshader" id="7_ogb8q"]
+[ext_resource type="Texture2D" uid="uid://b2r2mnq7bx6mj" path="res://Shaders/noise2.png" id="8_81w0h"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gp04v"]
+size = Vector2(450, 550)
+
+[sub_resource type="Animation" id="Animation_gp04v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/TransformParent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-700, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/TransformParent:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.34906584]
+}
+
+[sub_resource type="Animation" id="Animation_orekx"]
+resource_name = "entrance"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/TransformParent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666, 0.73333335, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-700, 0), Vector2(-600, 0), Vector2(-500, 0), Vector2(-400, 0), Vector2(-300, 0), Vector2(-250, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/TransformParent:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.5685125, 0.73333335, 0.89942145),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [-0.34906584, 0.34906584, -0.34906584, 0.34906584, -0.34906584, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16382706, 0.36671224, 0.5666667, 0.73333335, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_uj1fo"]
+resource_name = "exit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/TransformParent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666, 0.73333335, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-250, 0), Vector2(-170, 0), Vector2(-80, 0), Vector2(40, 0), Vector2(90, 0), Vector2(200, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/TransformParent:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666, 0.73333335, 0.89942145),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.34906584, -0.34906584, 0.34906584, -0.34906584, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333333, 0.36666667, 0.5666667, 0.73333335, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ghytx"]
+resource_name = "idle_state"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ogb8q"]
+_data = {
+&"RESET": SubResource("Animation_gp04v"),
+&"entrance": SubResource("Animation_orekx"),
+&"exit": SubResource("Animation_uj1fo"),
+&"idle_state": SubResource("Animation_ghytx")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_81w0h"]
+shader = ExtResource("7_ogb8q")
+shader_parameter/noise_texture = ExtResource("8_81w0h")
+shader_parameter/noiseTiling = 1.77200008417
+shader_parameter/strength = 0.0070000003325
+shader_parameter/speed = 0.258000012255
+shader_parameter/frames = 4.000000142499999
+
+[node name="CharacterPanel" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_uj1fo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 15
+position = Vector2(278, -5)
+texture = SubResource("PlaceholderTexture2D_gp04v")
+
+[node name="CharacterHolder" type="Node" parent="." node_paths=PackedStringArray("character_sprite", "anim_player")]
+script = ExtResource("1_k841r")
+character_sprite = NodePath("AnimationPlayer/TransformParent/Sprite2D")
+initData = ExtResource("5_ogb8q")
+npc_list = Array[ExtResource("3_gp04v")]([ExtResource("5_ogb8q"), ExtResource("6_81w0h"), ExtResource("5_ogb8q"), ExtResource("6_81w0h")])
+anim_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterHolder"]
+libraries = {
+&"": SubResource("AnimationLibrary_ogb8q")
+}
+script = ExtResource("3_ghytx")
+
+[node name="TransformParent" type="Node2D" parent="CharacterHolder/AnimationPlayer"]
+position = Vector2(-700, 0)
+rotation = -0.34906584
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterHolder/AnimationPlayer/TransformParent"]
+material = SubResource("ShaderMaterial_81w0h")
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("4_ghytx")
