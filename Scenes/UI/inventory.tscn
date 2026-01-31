@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://grk800p8ytot"]
+[gd_scene load_steps=14 format=3 uid="uid://grk800p8ytot"]
 
 [ext_resource type="Script" uid="uid://hx0cwngqmi1k" path="res://Scripts/inventory.gd" id="1_dt15g"]
 [ext_resource type="Resource" uid="uid://dltnwtryv5sfp" path="res://Resources/Inventory clothes/Hats.tres" id="2_14o23"]
@@ -8,12 +8,164 @@
 [ext_resource type="Resource" uid="uid://bnimclye1ctoh" path="res://Resources/Inventory clothes/Bottoms.tres" id="4_2lqwa"]
 [ext_resource type="Resource" uid="uid://ddmyh4kg5grf8" path="res://Resources/Inventory clothes/Shoes.tres" id="5_v8bd3"]
 
-[node name="Inventory" type="CanvasLayer"]
+[sub_resource type="Animation" id="Animation_d513x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 43.35293)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(25.52, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_14o23"]
+resource_name = "fade_in"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 43.35293), Vector2(48.880096, 43.35293)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(25.52, 0), Vector2(-2.4755497, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2lqwa"]
+resource_name = "fade_out"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(43.79419, 43.35293), Vector2(0, 43.35293)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.1197338, 0), Vector2(-1.1197338, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v8bd3"]
+resource_name = "fade_in_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(47.739594, 43.35293), Vector2(0, 43.35293)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2.249569, 0), Vector2(25.09277, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m06hg"]
+resource_name = "fade_out_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 43.35293), Vector2(47.739594, 43.35293)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2.249569, 0), Vector2(-2.249569, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v8bd3"]
+_data = {
+&"RESET": SubResource("Animation_d513x"),
+&"fade_in_left": SubResource("Animation_m06hg"),
+&"fade_in_right": SubResource("Animation_14o23"),
+&"fade_out_left": SubResource("Animation_v8bd3"),
+&"fade_out_right": SubResource("Animation_2lqwa")
+}
+
+[node name="Inventory" type="CanvasLayer" node_paths=PackedStringArray("hat_animation", "top_animation", "bottom_animation", "shoes_animation")]
 script = ExtResource("1_dt15g")
 hats = ExtResource("2_14o23")
 tops = ExtResource("3_d513x")
 bottoms = ExtResource("4_2lqwa")
 shoes = ExtResource("5_v8bd3")
+hat_animation = NodePath("GridContainer/Hat/HatAnimation")
+top_animation = NodePath("GridContainer/Top/TopAnimation")
+bottom_animation = NodePath("GridContainer/Bottom/BottomAnimation")
+shoes_animation = NodePath("GridContainer/Shoes/ShoesAnimation")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 anchors_preset = -1
@@ -42,6 +194,23 @@ layout_mode = 2
 texture = ExtResource("3_osrsm")
 expand_mode = 2
 
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Hat"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.068
+anchor_right = 1.0320001
+anchor_bottom = 1.008
+offset_left = 27.084
+offset_right = 1.7839985
+offset_bottom = 20.168928
+scale = Vector2(0.57273924, 0.5796509)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="HatAnimation" type="AnimationPlayer" parent="GridContainer/Hat"]
+libraries = {
+&"": SubResource("AnimationLibrary_v8bd3")
+}
+
 [node name="Next Hat" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
@@ -58,6 +227,23 @@ text = "<"
 unique_name_in_owner = true
 layout_mode = 2
 expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Top"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.068
+anchor_right = 1.0320001
+anchor_bottom = 1.008
+offset_left = 27.084
+offset_right = 1.7839985
+offset_bottom = 20.168928
+scale = Vector2(0.57273924, 0.5796509)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="TopAnimation" type="AnimationPlayer" parent="GridContainer/Top"]
+libraries = {
+&"": SubResource("AnimationLibrary_v8bd3")
+}
 
 [node name="Next Top" type="Button" parent="GridContainer"]
 layout_mode = 2
@@ -76,6 +262,23 @@ unique_name_in_owner = true
 layout_mode = 2
 expand_mode = 1
 
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Bottom"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.068
+anchor_right = 1.0320001
+anchor_bottom = 1.008
+offset_left = 27.084
+offset_right = 1.7839985
+offset_bottom = 20.168928
+scale = Vector2(0.57273924, 0.5796509)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="BottomAnimation" type="AnimationPlayer" parent="GridContainer/Bottom"]
+libraries = {
+&"": SubResource("AnimationLibrary_v8bd3")
+}
+
 [node name="Next Bottom" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
@@ -92,6 +295,23 @@ text = "<"
 unique_name_in_owner = true
 layout_mode = 2
 expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Shoes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.068
+anchor_right = 1.0320001
+anchor_bottom = 1.008
+offset_left = 27.084
+offset_right = 1.7839985
+offset_bottom = 20.168928
+scale = Vector2(0.57273924, 0.5796509)
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="ShoesAnimation" type="AnimationPlayer" parent="GridContainer/Shoes"]
+libraries = {
+&"": SubResource("AnimationLibrary_v8bd3")
+}
 
 [node name="Next Shoes" type="Button" parent="GridContainer"]
 layout_mode = 2

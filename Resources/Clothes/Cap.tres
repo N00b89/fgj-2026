@@ -4,6 +4,5 @@
 
 [resource]
 script = ExtResource("1_meowr")
-color = "Red"
-style = "Modern"
+text = Array[String](["Red", "Modern"])
 metadata/_custom_type_script = "uid://do1p6p8op2tn1"
