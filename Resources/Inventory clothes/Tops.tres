@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ca8smspplcdiy"]
+
+[ext_resource type="Texture2D" uid="uid://d2gl4yq1ketad" path="res://icon.svg" id="1_6lcmb"]
+[ext_resource type="Script" uid="uid://b46sxqet018c1" path="res://Scripts/ItemInventory.gd" id="2_smoo8"]
+
+[resource]
+script = ExtResource("2_smoo8")
+name = "Fedora"
+items = Array[Texture2D]([ExtResource("1_6lcmb")])
