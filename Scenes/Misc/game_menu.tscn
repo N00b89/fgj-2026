@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Resume" type="Button" parent="Buttons"]
+process_mode = 3
 layout_mode = 2
 text = "Resume"
 
@@ -27,5 +28,5 @@ text = "Resume"
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="Buttons/Resume" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
