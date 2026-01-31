@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://dltnwtryv5sfp"]
+
+[ext_resource type="Texture2D" uid="uid://b7wcdxkvt4e1v" path="res://Assets/Clothes/Art/Hats/Cap.jpg" id="1_mekx8"]
+[ext_resource type="Texture2D" uid="uid://chib5najd7nl6" path="res://Assets/Clothes/Art/Hats/Fedora.jpg" id="2_xy2qo"]
+[ext_resource type="Texture2D" uid="uid://mf360qt6bo7q" path="res://Assets/Clothes/Art/Hats/Tophat.jpg" id="3_6u5gh"]
+[ext_resource type="Script" uid="uid://b46sxqet018c1" path="res://Scripts/ItemInventory.gd" id="4_rdghq"]
+
+[resource]
+script = ExtResource("4_rdghq")
+name = "Hats"
+items = Array[Texture2D]([ExtResource("1_mekx8"), ExtResource("2_xy2qo"), ExtResource("3_6u5gh")])

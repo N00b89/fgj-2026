@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://grk800p8ytot"]
+
+[ext_resource type="Script" uid="uid://hx0cwngqmi1k" path="res://Scripts/inventory.gd" id="1_dt15g"]
+[ext_resource type="Resource" uid="uid://dltnwtryv5sfp" path="res://Resources/Inventory clothes/Hats.tres" id="2_14o23"]
+[ext_resource type="StyleBox" uid="uid://bptevte4cet4y" path="res://Assets/UI/clear_button.tres" id="2_osrsm"]
+[ext_resource type="Resource" uid="uid://ca8smspplcdiy" path="res://Resources/Inventory clothes/Tops.tres" id="3_d513x"]
+[ext_resource type="Texture2D" uid="uid://b7wcdxkvt4e1v" path="res://Assets/Clothes/Art/Hats/Cap.jpg" id="3_osrsm"]
+[ext_resource type="Resource" uid="uid://bnimclye1ctoh" path="res://Resources/Inventory clothes/Bottoms.tres" id="4_2lqwa"]
+[ext_resource type="Resource" uid="uid://ddmyh4kg5grf8" path="res://Resources/Inventory clothes/Shoes.tres" id="5_v8bd3"]
+
+[node name="Inventory" type="CanvasLayer"]
+script = ExtResource("1_dt15g")
+hats = ExtResource("2_14o23")
+tops = ExtResource("3_d513x")
+bottoms = ExtResource("4_2lqwa")
+shoes = ExtResource("5_v8bd3")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.46831596
+anchor_top = 0.41743827
+anchor_right = 0.53168404
+anchor_bottom = 0.58256173
+offset_left = 172.5
+offset_top = -178.5
+offset_right = 172.5
+offset_bottom = -178.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.425371, 4.3773146)
+columns = 3
+
+[node name="Previous Hat" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_styles/normal = ExtResource("2_osrsm")
+text = "<"
+
+[node name="Hat" type="TextureRect" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_osrsm")
+expand_mode = 2
+
+[node name="Next Hat" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_styles/normal = ExtResource("2_osrsm")
+text = ">"
+
+[node name="Previous Top" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_styles/normal = ExtResource("2_osrsm")
+text = "<"
+
+[node name="Top" type="TextureRect" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+
+[node name="Next Top" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_styles/normal = ExtResource("2_osrsm")
+text = ">"
+
+[node name="Previous Bottom" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_styles/normal = ExtResource("2_osrsm")
+text = "<"
+
+[node name="Bottom" type="TextureRect" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+
+[node name="Next Bottom" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_styles/normal = ExtResource("2_osrsm")
+text = ">"
+
+[node name="Previous Shoes" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_styles/normal = ExtResource("2_osrsm")
+text = "<"
+
+[node name="Shoes" type="TextureRect" parent="GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+expand_mode = 1
+
+[node name="Next Shoes" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
+theme_override_styles/normal = ExtResource("2_osrsm")
+text = ">"
+
+[connection signal="pressed" from="GridContainer/Previous Hat" to="." method="_on_previous_hat_pressed"]
+[connection signal="pressed" from="GridContainer/Next Hat" to="." method="_on_next_hat_pressed"]
+[connection signal="pressed" from="GridContainer/Previous Top" to="." method="_on_previous_top_pressed"]
+[connection signal="pressed" from="GridContainer/Next Top" to="." method="_on_next_top_pressed"]
+[connection signal="pressed" from="GridContainer/Previous Bottom" to="." method="_on_previous_bottom_pressed"]
+[connection signal="pressed" from="GridContainer/Next Bottom" to="." method="_on_next_bottom_pressed"]
+[connection signal="pressed" from="GridContainer/Previous Shoes" to="." method="_on_previous_shoes_pressed"]
+[connection signal="pressed" from="GridContainer/Next Shoes" to="." method="_on_next_shoes_pressed"]

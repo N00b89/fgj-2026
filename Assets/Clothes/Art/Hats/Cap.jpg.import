@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqntrnuh45c1v"
-path="res://.godot/imported/Illustration52 (2).png-4c8e7ed957e277d0e2ff9352c241c194.ctex"
+uid="uid://b7wcdxkvt4e1v"
+path="res://.godot/imported/Cap.jpg-d0fa29ffb8c0746b30a03a871fb173b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Illustration52 (2).png"
-dest_files=["res://.godot/imported/Illustration52 (2).png-4c8e7ed957e277d0e2ff9352c241c194.ctex"]
+source_file="res://Assets/Clothes/Art/Hats/Cap.jpg"
+dest_files=["res://.godot/imported/Cap.jpg-d0fa29ffb8c0746b30a03a871fb173b0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwgsj1rklt1ll"
-path="res://.godot/imported/Illustration52 (1).png-913dea54c8cc44a9d7b7bfc352140d0d.ctex"
+uid="uid://mf360qt6bo7q"
+path="res://.godot/imported/Tophat.jpg-b06668881f621935250a59103edf7296.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Illustration52 (1).png"
-dest_files=["res://.godot/imported/Illustration52 (1).png-913dea54c8cc44a9d7b7bfc352140d0d.ctex"]
+source_file="res://Assets/Clothes/Art/Hats/Tophat.jpg"
+dest_files=["res://.godot/imported/Tophat.jpg-b06668881f621935250a59103edf7296.ctex"]
 
 [params]
 

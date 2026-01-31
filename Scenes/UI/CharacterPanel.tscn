@@ -1,12 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://0v2mx0pf1t3d"]
 
-[ext_resource type="Script" uid="uid://ddlmdgr862ekq" path="res://Scenes/character_holder.gd" id="1_k841r"]
-[ext_resource type="Script" uid="uid://7hjxcrkco6xw" path="res://Scenes/screenshake.gd" id="1_uj1fo"]
-[ext_resource type="Resource" uid="uid://uv1mvmigsavq" path="res://Scripts/GentleMan2.tres" id="2_foo7y"]
-[ext_resource type="Resource" uid="uid://jb3y8fhv55c0" path="res://Scripts/GentleMan1.tres" id="2_ghytx"]
-[ext_resource type="Script" uid="uid://47d2s2d2rcad" path="res://Scenes/AnimController.gd" id="3_ghytx"]
-[ext_resource type="Script" uid="uid://dftuwumnummdp" path="res://Scripts/NPCData.gd" id="3_gp04v"]
-[ext_resource type="Texture2D" uid="uid://cwgsj1rklt1ll" path="res://Illustration52 (1).png" id="4_ghytx"]
+[ext_resource type="Script" uid="uid://ddlmdgr862ekq" path="res://Scripts/character_holder.gd" id="1_k841r"]
+[ext_resource type="Resource" uid="uid://uv1mvmigsavq" path="res://Resources/Characters/GentleMan2.tres" id="2_foo7y"]
+[ext_resource type="Resource" uid="uid://jb3y8fhv55c0" path="res://Resources/Characters/GentleMan1.tres" id="2_ghytx"]
+[ext_resource type="Script" uid="uid://47d2s2d2rcad" path="res://Scripts/AnimController.gd" id="3_ghytx"]
+[ext_resource type="Script" path="res://Scripts/NPCData.gd" id="3_gp04v"]
+[ext_resource type="Texture2D" uid="uid://cwgsj1rklt1ll" path="res://Assets/Characters/Art/Illustration52 (1).png" id="4_ghytx"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gp04v"]
 size = Vector2(450, 550)
