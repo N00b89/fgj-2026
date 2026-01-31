@@ -34,7 +34,7 @@ func _completeDress():
 	else:
 		print("Guy just died")
 		
- 	_createCharacter(npc_list[npcIndex])
+	_createCharacter(npc_list[npcIndex])
 	npcIndex+=1
 	
 func _processCharacterControl() -> bool:

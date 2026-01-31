@@ -1,11 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://0v2mx0pf1t3d"]
+[gd_scene load_steps=14 format=3 uid="uid://0v2mx0pf1t3d"]
 
 [ext_resource type="Script" uid="uid://ddlmdgr862ekq" path="res://Scenes/character_holder.gd" id="1_k841r"]
+[ext_resource type="Script" uid="uid://7hjxcrkco6xw" path="res://Scenes/screenshake.gd" id="1_uj1fo"]
 [ext_resource type="Resource" uid="uid://uv1mvmigsavq" path="res://Scripts/GentleMan2.tres" id="2_foo7y"]
 [ext_resource type="Resource" uid="uid://jb3y8fhv55c0" path="res://Scripts/GentleMan1.tres" id="2_ghytx"]
 [ext_resource type="Script" uid="uid://47d2s2d2rcad" path="res://Scenes/AnimController.gd" id="3_ghytx"]
 [ext_resource type="Script" uid="uid://dftuwumnummdp" path="res://Scripts/NPCData.gd" id="3_gp04v"]
 [ext_resource type="Texture2D" uid="uid://cwgsj1rklt1ll" path="res://Illustration52 (1).png" id="4_ghytx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_gp04v"]
+size = Vector2(450, 550)
 
 [sub_resource type="Animation" id="Animation_ghytx"]
 resource_name = "idle_state"
@@ -35,6 +39,35 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [-0.34906584, 0.34906584, -0.34906584, 0.34906584, -0.34906584, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16382706, 0.36671224, 0.5666667, 0.73333335, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_gp04v"]
@@ -76,7 +109,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666, 0.73333335, 0.9),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(-250, 0), Vector2(-170, 0), Vector2(-80, 0), Vector2(0, 0), Vector2(90, 0), Vector2(200, 0)]
+"values": [Vector2(-250, 0), Vector2(-170, 0), Vector2(-80, 0), Vector2(40, 0), Vector2(90, 0), Vector2(200, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -85,10 +118,39 @@ tracks/1/path = NodePath("AnimationPlayer/TransformParent:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.5685125, 0.73333335, 0.89942145),
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666, 0.73333335, 0.89942145),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0.34906584, 0.34906584, -0.34906584, 0.34906584, -0.34906584, 0.0]
+"values": [0.0, 0.34906584, -0.34906584, 0.34906584, -0.34906584, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333333, 0.36666667, 0.5666667, 0.73333335, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ogb8q"]
@@ -102,6 +164,12 @@ _data = {
 [node name="CharacterPanel" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_uj1fo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 15
+position = Vector2(278, -5)
+texture = SubResource("PlaceholderTexture2D_gp04v")
 
 [node name="CharacterHolder" type="Node" parent="." node_paths=PackedStringArray("character_sprite", "anim_player")]
 script = ExtResource("1_k841r")
