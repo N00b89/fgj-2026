@@ -313,7 +313,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_v8bd3")
 }
 
-[node name="Button" type="Button" parent="GridContainer/Hat"]
+[node name="Hat Selection" type="Button" parent="GridContainer/Hat"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 24.414856
@@ -354,7 +354,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_v8bd3")
 }
 
-[node name="Button2" type="Button" parent="GridContainer/Top"]
+[node name="Top Selection" type="Button" parent="GridContainer/Top"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_top = -27.0
@@ -396,7 +396,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_v8bd3")
 }
 
-[node name="Button3" type="Button" parent="GridContainer/Bottom"]
+[node name="Bottom Selection" type="Button" parent="GridContainer/Bottom"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 0.010123401
@@ -439,7 +439,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_v8bd3")
 }
 
-[node name="Button4" type="Button" parent="GridContainer/Shoes"]
+[node name="Shoes Selection" type="Button" parent="GridContainer/Shoes"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 0.010123401

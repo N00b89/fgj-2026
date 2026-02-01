@@ -468,3 +468,11 @@ visible = false
 
 [node name="CursorManager" parent="Inventory" instance=ExtResource("23_23y05")]
 position = Vector2(-99, -126)
+
+[connection signal="pressed" from="Inventory/GridContainer/Hat/Hat Selection" to="CharacterHolder" method="_on_hat_selection_pressed"]
+[connection signal="pressed" from="Inventory/GridContainer/Top/Top Selection" to="CharacterHolder" method="_on_top_selection_pressed"]
+[connection signal="pressed" from="Inventory/GridContainer/Bottom/Bottom Selection" to="CharacterHolder" method="_on_bottom_selection_pressed"]
+[connection signal="pressed" from="Inventory/GridContainer/Shoes/Shoes Selection" to="CharacterHolder" method="_on_shoes_selection_pressed"]
+[connection signal="pressed" from="Inventory/Done Button" to="CharacterHolder" method="_on_done_button_pressed"]
+
+[editable path="Inventory"]

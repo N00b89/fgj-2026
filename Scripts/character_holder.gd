@@ -143,3 +143,19 @@ func update_npc(_data : NPCData):
 		character_sprite.texture = _data.sprite
 		print("Loaded Data")
 		anim_player._entrance()
+
+
+func _on_done_button_pressed() -> void:
+	_completeDress()
+
+func _on_hat_selection_pressed() -> void:
+	_setClothing(ClothingType.face, $"../Inventory".hats.items[$"../Inventory".current_hat])
+
+func _on_top_selection_pressed() -> void:
+	_setClothing(ClothingType.body, $"../Inventory".tops.items[$"../Inventory".current_top])
+
+func _on_bottom_selection_pressed() -> void:
+	_setClothing(ClothingType.lowerbody, $"../Inventory".bottoms.items[$"../Inventory".current_bottom])
+
+func _on_shoes_selection_pressed() -> void:
+	_setClothing(ClothingType.shoes, $"../Inventory".shoes.items[$"../Inventory".current_shoes])
