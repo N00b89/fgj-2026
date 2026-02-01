@@ -1,5 +1,6 @@
 extends Node
 
+
 enum ClothingType{
 		face,
 		body,
@@ -70,6 +71,7 @@ func _ready():
 	print("Start??")
 	print("Start??")
 	_createCharacter(initData);
+	$Countdown.start_timer()
 	print("Start2")
 
 func _process(delta: float):
@@ -131,5 +133,3 @@ func update_npc(_data : NPCData):
 		character_sprite.texture = _data.sprite
 		print("Loaded Data")
 		anim_player._entrance()
-		
-	
