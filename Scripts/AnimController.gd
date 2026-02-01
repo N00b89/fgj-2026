@@ -20,10 +20,14 @@ func _exit():
 	play("exit")
 	await get_tree().create_timer(.3).timeout
 	SoundManager.play_random_sfx(leaveVA)
+func _die():
+	print("playing die")
+	play("Die")
+	SoundManager.play_random_sfx(leaveVA)
 	
 func _playStep():
 	camera.apply_shake(1.5)
 	SoundManager.play_random_sfx(["step","step2","step3"])
 	
 func _playSound(inp:String):
-	SoundManager.play_sfx("flip")
+	SoundManager.play_sfx(inp)

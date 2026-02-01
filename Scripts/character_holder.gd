@@ -87,16 +87,17 @@ func _process(delta: float):
 		_setClothing(ClothingType.shoes,debugItem4)
 		
 func _completeDress():
-	
-
-	anim_player._exit()
-	await get_tree().create_timer(1.2).timeout
 	if(_processCharacterControl()):
 		print("Guy is chill")
+		anim_player._exit()
+	
 	else:
 		gameManager._loseHp()
 		print("Guy just died")
-	_createCharacter(npc_list[npcIndex])
+		anim_player._die()
+	await get_tree().create_timer(1.5).timeout
+	
+	_createCharacter(npc_list.pick_random())
 	npcIndex+=1
 	
 func _processCharacterControl() -> bool:
