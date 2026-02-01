@@ -4,6 +4,8 @@ extends Node
 	"step": {"stream": preload("res://sounds/fsfx-02.wav"), "volume": -8.0},
 	"step2": {"stream": preload("res://sounds/fsfx-03.wav"), "volume": -5.0},
 	"step3": {"stream": preload("res://sounds/fsfx-04.wav"), "volume": -8.0},
+	"wood1": {"stream": preload("res://sounds/fsfx-06.wav"), "volume": -5.0},
+	"wood2": {"stream": preload("res://sounds/fsfx-07.wav"), "volume": -5.0},
 	"flip": {"stream": preload("res://sounds/fsfx-03.wav"), "volume": 12.0},
 	"gunshot": {"stream": preload("res://sounds/gunshot.wav"), "volume": 0.0},
 	"va2": {"stream": preload("res://sounds/flash_va-02.wav"), "volume": -10.0},

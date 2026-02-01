@@ -10,6 +10,7 @@ enum ClothingType{
 	}
 	
 
+@export var speech_bubble: SpeechBubble
 @export var character_sprite: Sprite2D
 @export var initData: NPCData
 @export var debugItem1: ItemData
@@ -89,6 +90,7 @@ func _process(delta: float):
 		_setClothing(ClothingType.shoes,debugItem4)
 		
 func _completeDress():
+	speech_bubble.hide()
 	var isWrong = false;
 	if(_processCharacterControl()):
 		print("Guy is chill")
@@ -145,6 +147,8 @@ func update_npc(_data : NPCData):
 		character_sprite.texture = _data.sprite
 		print("Loaded Data")
 		anim_player._entrance()
+		await get_tree().create_timer(.5).timeout
+		speech_bubble._setRequest()
 
 
 func _on_done_button_pressed() -> void:

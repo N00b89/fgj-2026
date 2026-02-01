@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://by8103nhxne8o"]
+[gd_scene load_steps=38 format=3 uid="uid://by8103nhxne8o"]
 
 [ext_resource type="Script" uid="uid://ddlmdgr862ekq" path="res://Scripts/character_holder.gd" id="1_k841r"]
 [ext_resource type="Texture2D" uid="uid://cot7jevf60sba" path="res://Assets/UI/Ground.png" id="2_6act6"]
@@ -21,9 +21,19 @@
 [ext_resource type="Texture2D" uid="uid://b2r2mnq7bx6mj" path="res://Shaders/noise2.png" id="8_81w0h"]
 [ext_resource type="Texture2D" uid="uid://v3askt4420xf" path="res://Assets/Characters/Art/Illustration52 (3).png" id="10_ohmnt"]
 [ext_resource type="Shader" uid="uid://4veedejpn06l" path="res://Shaders/Wiggly.gdshader" id="11_o4fp0"]
+[ext_resource type="PackedScene" uid="uid://ciroa85oojkht" path="res://Scenes/UI/speech_bubble.tscn" id="23_23y05"]
+[ext_resource type="FontFile" uid="uid://cgocfb4r3aa32" path="res://Resources/PlaywriteNZBasic-VariableFont_wght.ttf" id="24_257w2"]
 [ext_resource type="PackedScene" uid="uid://c86ugk62daqvo" path="res://Scenes/Misc/game_menu.tscn" id="24_pnfgi"]
 [ext_resource type="Script" uid="uid://do1p6p8op2tn1" path="res://Scripts/ItemData.gd" id="24_wcsiq"]
 [ext_resource type="PackedScene" uid="uid://grk800p8ytot" path="res://Scenes/UI/inventory.tscn" id="25_257w2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcsiq"]
+shader = ExtResource("7_ogb8q")
+shader_parameter/noise_texture = ExtResource("8_81w0h")
+shader_parameter/noiseTiling = 2.10000009975
+shader_parameter/strength = 0.002000000095
+shader_parameter/speed = 2.90000013775
+shader_parameter/frames = 4.000000142499999
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nsh33"]
 
@@ -301,12 +311,17 @@ shader_parameter/strength = 0.02000000095
 shader_parameter/speed = 2.98000014155
 shader_parameter/frames = 4.000000142499999
 
+[sub_resource type="LabelSettings" id="LabelSettings_23y05"]
+font = ExtResource("24_257w2")
+font_color = Color(0, 0, 0, 1)
+
 [node name="CharacterPanel" type="Node2D"]
 
 [node name="Ground" type="Sprite2D" parent="."]
 modulate = Color(0.76661915, 0.7666197, 0.76661927, 1)
 z_index = 12
 z_as_relative = false
+material = SubResource("ShaderMaterial_wcsiq")
 position = Vector2(-3, 57)
 rotation = -0.034906585
 scale = Vector2(0.61, 0.61)
@@ -411,8 +426,9 @@ scale = Vector2(1.202419, -1.2170503)
 skew = 0.006537199
 texture = ExtResource("6_fww22")
 
-[node name="CharacterHolder" type="Node" parent="." node_paths=PackedStringArray("character_sprite", "headParent", "bodyParent", "lowerParent", "shoeParent", "anim_player")]
+[node name="CharacterHolder" type="Node" parent="." node_paths=PackedStringArray("speech_bubble", "character_sprite", "headParent", "bodyParent", "lowerParent", "shoeParent", "anim_player")]
 script = ExtResource("1_k841r")
+speech_bubble = NodePath("../Speech Bubble")
 character_sprite = NodePath("AnimationPlayer/TransformParent/Sprite2D")
 initData = ExtResource("5_ogb8q")
 debugItem1 = ExtResource("4_ip5rw")
@@ -463,6 +479,19 @@ material = SubResource("ShaderMaterial_ip5rw")
 [node name="Game Menu" parent="." instance=ExtResource("24_pnfgi")]
 visible = false
 
+[node name="Speech Bubble" parent="." instance=ExtResource("23_23y05")]
+anchor_right = 1.0
+anchor_bottom = 0.737
+offset_left = -510.0
+offset_top = -210.0
+offset_right = -2.0
+offset_bottom = -197.0
+grow_horizontal = 2
+pivot_offset = Vector2(0.5, 0.5)
+text = "sfasfasfasfasfasfasfasfsafasfsafsasafasfasfsafasfasfsafasfasfsafas"
+label_settings = SubResource("LabelSettings_23y05")
+max_lines_visible = 5
+
 [node name="Inventory" parent="." node_paths=PackedStringArray("characterPanel") instance=ExtResource("25_257w2")]
 characterPanel = NodePath("../CharacterHolder")
 hats = Array[ExtResource("24_wcsiq")]([ExtResource("4_ip5rw"), ExtResource("6_6act6")])
@@ -477,6 +506,7 @@ position = Vector2(866.99994, 328)
 [connection signal="pressed" from="Inventory/GridContainer/Top/Top Selection" to="CharacterHolder" method="_on_top_selection_pressed"]
 [connection signal="pressed" from="Inventory/GridContainer/Bottom/Bottom Selection" to="CharacterHolder" method="_on_bottom_selection_pressed"]
 [connection signal="pressed" from="Inventory/GridContainer/Shoes/Shoes Selection" to="CharacterHolder" method="_on_shoes_selection_pressed"]
+[connection signal="button_down" from="Inventory/Done Button" to="Inventory" method="_on_done_button_button_down"]
 [connection signal="pressed" from="Inventory/Done Button" to="CharacterHolder" method="_on_done_button_pressed"]
 
 [editable path="Inventory"]

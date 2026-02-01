@@ -1,12 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://grk800p8ytot"]
+[gd_scene load_steps=16 format=3 uid="uid://grk800p8ytot"]
 
 [ext_resource type="Script" uid="uid://hx0cwngqmi1k" path="res://Scripts/inventory.gd" id="1_dt15g"]
-[ext_resource type="Resource" uid="uid://dltnwtryv5sfp" path="res://Resources/Inventory clothes/Hats.tres" id="2_14o23"]
 [ext_resource type="StyleBox" uid="uid://bptevte4cet4y" path="res://Assets/UI/clear_button.tres" id="2_osrsm"]
-[ext_resource type="Resource" uid="uid://ca8smspplcdiy" path="res://Resources/Inventory clothes/Tops.tres" id="3_d513x"]
 [ext_resource type="Texture2D" uid="uid://b7wcdxkvt4e1v" path="res://Assets/Clothes/Art/Hats/Cap.jpg" id="3_osrsm"]
-[ext_resource type="Resource" uid="uid://bnimclye1ctoh" path="res://Resources/Inventory clothes/Bottoms.tres" id="4_2lqwa"]
-[ext_resource type="Resource" uid="uid://ddmyh4kg5grf8" path="res://Resources/Inventory clothes/Shoes.tres" id="5_v8bd3"]
 [ext_resource type="Texture2D" uid="uid://cwrlfwju7vp5m" path="res://Assets/UI/Menu.png" id="6_mnhd3"]
 [ext_resource type="Texture2D" uid="uid://bvh0pvkuf53mp" path="res://Assets/UI/Border.png" id="7_or60b"]
 [ext_resource type="Texture2D" uid="uid://dbd44jd8wtd80" path="res://Assets/UI/Arrow.png" id="8_aubfq"]
@@ -167,10 +163,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [node name="Inventory" type="CanvasLayer" node_paths=PackedStringArray("hat_animation", "top_animation", "bottom_animation", "shoes_animation")]
 layer = 0
 script = ExtResource("1_dt15g")
-hats = ExtResource("2_14o23")
-tops = ExtResource("3_d513x")
-bottoms = ExtResource("4_2lqwa")
-shoes = ExtResource("5_v8bd3")
 hat_animation = NodePath("GridContainer/Hat/HatAnimation")
 top_animation = NodePath("GridContainer/Top/TopAnimation")
 bottom_animation = NodePath("GridContainer/Bottom/BottomAnimation")
@@ -178,8 +170,8 @@ shoes_animation = NodePath("GridContainer/Shoes/ShoesAnimation")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_as_relative = false
-position = Vector2(866.9312, 329.0621)
-scale = Vector2(0.6086213, 0.72560555)
+position = Vector2(875.5, 315.99997)
+scale = Vector2(0.6338236, 0.6549062)
 texture = ExtResource("6_mnhd3")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
