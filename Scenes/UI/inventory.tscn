@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://grk800p8ytot"]
+[gd_scene load_steps=20 format=3 uid="uid://grk800p8ytot"]
 
 [ext_resource type="Script" uid="uid://hx0cwngqmi1k" path="res://Scripts/inventory.gd" id="1_dt15g"]
 [ext_resource type="Resource" uid="uid://dltnwtryv5sfp" path="res://Resources/Inventory clothes/Hats.tres" id="2_14o23"]
@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://b7wcdxkvt4e1v" path="res://Assets/Clothes/Art/Hats/Cap.jpg" id="3_osrsm"]
 [ext_resource type="Resource" uid="uid://bnimclye1ctoh" path="res://Resources/Inventory clothes/Bottoms.tres" id="4_2lqwa"]
 [ext_resource type="Resource" uid="uid://ddmyh4kg5grf8" path="res://Resources/Inventory clothes/Shoes.tres" id="5_v8bd3"]
+[ext_resource type="Texture2D" uid="uid://cwrlfwju7vp5m" path="res://Assets/UI/Menu.png" id="6_mnhd3"]
+[ext_resource type="Texture2D" uid="uid://bvh0pvkuf53mp" path="res://Assets/UI/Border.png" id="7_or60b"]
+[ext_resource type="Texture2D" uid="uid://dbd44jd8wtd80" path="res://Assets/UI/Arrow.png" id="8_aubfq"]
+[ext_resource type="Texture2D" uid="uid://bt5dnxpalsnpm" path="res://Assets/UI/DoneButton.png" id="9_kovtf"]
+[ext_resource type="FontFile" uid="uid://bwvjampjv4gqs" path="res://Assets/UI/Art/Director-Regular.otf" id="12_x2jye"]
 
 [sub_resource type="Animation" id="Animation_d513x"]
 length = 0.001
@@ -33,90 +38,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(25.52, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_14o23"]
-resource_name = "fade_in"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 43.35293), Vector2(48.880096, 43.35293)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(25.52, 0), Vector2(-2.4755497, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2lqwa"]
-resource_name = "fade_out"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(43.79419, 43.35293), Vector2(0, 43.35293)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-1.1197338, 0), Vector2(-1.1197338, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_v8bd3"]
-resource_name = "fade_in_left"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:size")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(47.739594, 43.35293), Vector2(0, 43.35293)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-2.249569, 0), Vector2(25.09277, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_m06hg"]
@@ -147,6 +68,90 @@ tracks/1/keys = {
 "values": [Vector2(-2.249569, 0), Vector2(-2.249569, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_14o23"]
+resource_name = "fade_in"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 43.35293), Vector2(48.880096, 43.35293)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(25.52, 0), Vector2(-2.4755497, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v8bd3"]
+resource_name = "fade_in_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(47.739594, 43.35293), Vector2(0, 43.35293)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-2.249569, 0), Vector2(25.09277, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2lqwa"]
+resource_name = "fade_out"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(43.79419, 43.35293), Vector2(0, 43.35293)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1.1197338, 0), Vector2(-1.1197338, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v8bd3"]
 _data = {
 &"RESET": SubResource("Animation_d513x"),
@@ -155,6 +160,9 @@ _data = {
 &"fade_out_left": SubResource("Animation_v8bd3"),
 &"fade_out_right": SubResource("Animation_2lqwa")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1s6bo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Inventory" type="CanvasLayer" node_paths=PackedStringArray("hat_animation", "top_animation", "bottom_animation", "shoes_animation")]
 script = ExtResource("1_dt15g")
@@ -167,22 +175,116 @@ top_animation = NodePath("GridContainer/Top/TopAnimation")
 bottom_animation = NodePath("GridContainer/Bottom/BottomAnimation")
 shoes_animation = NodePath("GridContainer/Shoes/ShoesAnimation")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_as_relative = false
+position = Vector2(840.00006, 330)
+scale = Vector2(0.6086213, 0.72560555)
+texture = ExtResource("6_mnhd3")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = 15
+z_as_relative = false
+position = Vector2(842, 167)
+scale = Vector2(0.47477227, 0.56556094)
+texture = ExtResource("7_or60b")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D4"]
+z_index = 15
+position = Vector2(169.2518, -11.669296)
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("8_aubfq")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D4"]
+z_index = 15
+position = Vector2(-162.14035, 4.3759766)
+rotation = 3.0073845
+scale = Vector2(1.202419, -1.2170503)
+skew = 0.006537199
+texture = ExtResource("8_aubfq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = 15
+position = Vector2(841, 275)
+scale = Vector2(0.44649088, 0.6055603)
+texture = ExtResource("7_or60b")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D3"]
+z_index = 15
+position = Vector2(169.2518, -11.669296)
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("8_aubfq")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D3"]
+z_index = 15
+position = Vector2(-162.14035, 4.3759766)
+rotation = 3.0073845
+scale = Vector2(1.202419, -1.2170503)
+skew = 0.006537199
+texture = ExtResource("8_aubfq")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+z_index = 15
+position = Vector2(843.99994, 392)
+scale = Vector2(0.47477227, 0.6455609)
+texture = ExtResource("7_or60b")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D5"]
+z_index = 15
+position = Vector2(169.2518, -11.669296)
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("8_aubfq")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D5"]
+z_index = 15
+position = Vector2(-162.14035, 4.3759766)
+rotation = 3.0073845
+scale = Vector2(1.202419, -1.2170503)
+skew = 0.006537199
+texture = ExtResource("8_aubfq")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+z_index = 15
+position = Vector2(842, 508)
+scale = Vector2(0.4541994, 0.5655597)
+texture = ExtResource("7_or60b")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D7"]
+z_index = 15
+position = Vector2(169.2518, -11.669296)
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("8_aubfq")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D7"]
+z_index = 15
+position = Vector2(-162.14035, 4.3759766)
+rotation = 3.0073845
+scale = Vector2(1.202419, -1.2170503)
+skew = 0.006537199
+texture = ExtResource("8_aubfq")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+z_index = 15
+position = Vector2(842, 601)
+scale = Vector2(0.5664909, 0.6855597)
+texture = ExtResource("9_kovtf")
+
 [node name="GridContainer" type="GridContainer" parent="."]
 anchors_preset = -1
 anchor_left = 0.46831596
 anchor_top = 0.41743827
 anchor_right = 0.53168404
 anchor_bottom = 0.58256173
-offset_left = 172.5
-offset_top = -178.5
-offset_right = 172.5
-offset_bottom = -178.5
+offset_left = 190.50006
+offset_top = -146.5
+offset_right = 190.50006
+offset_bottom = -146.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(4.425371, 4.3773146)
+scale = Vector2(4.4623604, 4.0904307)
 columns = 3
 
 [node name="Previous Hat" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
 theme_override_styles/normal = ExtResource("2_osrsm")
@@ -204,7 +306,6 @@ offset_left = 27.084
 offset_right = 1.7839985
 offset_bottom = 20.168928
 scale = Vector2(0.57273924, 0.5796509)
-color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 
 [node name="HatAnimation" type="AnimationPlayer" parent="GridContainer/Hat"]
 libraries = {
@@ -218,12 +319,14 @@ offset_right = 24.414856
 offset_bottom = 23.073505
 
 [node name="Next Hat" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
 theme_override_styles/normal = ExtResource("2_osrsm")
 text = ">"
 
 [node name="Previous Top" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
 theme_override_styles/normal = ExtResource("2_osrsm")
@@ -244,7 +347,6 @@ offset_left = 27.084
 offset_right = 1.7839985
 offset_bottom = 20.168928
 scale = Vector2(0.57273924, 0.5796509)
-color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 
 [node name="TopAnimation" type="AnimationPlayer" parent="GridContainer/Top"]
 libraries = {
@@ -259,12 +361,14 @@ offset_right = 24.414856
 offset_bottom = -3.9264946
 
 [node name="Next Top" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
 theme_override_styles/normal = ExtResource("2_osrsm")
 text = ">"
 
 [node name="Previous Bottom" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
 theme_override_styles/normal = ExtResource("2_osrsm")
@@ -285,7 +389,6 @@ offset_left = 27.084
 offset_right = 1.7839985
 offset_bottom = 20.168928
 scale = Vector2(0.57273924, 0.5796509)
-color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 
 [node name="BottomAnimation" type="AnimationPlayer" parent="GridContainer/Bottom"]
 libraries = {
@@ -301,12 +404,14 @@ offset_right = 24.42498
 offset_bottom = 22.530933
 
 [node name="Next Bottom" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
 theme_override_styles/normal = ExtResource("2_osrsm")
 text = ">"
 
 [node name="Previous Shoes" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
 theme_override_styles/normal = ExtResource("2_osrsm")
@@ -327,7 +432,6 @@ offset_left = 27.084
 offset_right = 1.7839985
 offset_bottom = 20.168928
 scale = Vector2(0.57273924, 0.5796509)
-color = Color(0.3019608, 0.3019608, 0.3019608, 1)
 
 [node name="ShoesAnimation" type="AnimationPlayer" parent="GridContainer/Shoes"]
 libraries = {
@@ -343,10 +447,21 @@ offset_right = 24.42498
 offset_bottom = 23.401905
 
 [node name="Next Shoes" type="Button" parent="GridContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
 theme_override_styles/normal = ExtResource("2_osrsm")
 text = ">"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 747.99994
+offset_top = 575.99994
+offset_right = 804.99994
+offset_bottom = 592.99994
+rotation = -0.07477015
+scale = Vector2(3.1645572, 3.6899848)
+theme_override_fonts/font = ExtResource("12_x2jye")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1s6bo")
 
 [connection signal="pressed" from="GridContainer/Previous Hat" to="." method="_on_previous_hat_pressed"]
 [connection signal="pressed" from="GridContainer/Next Hat" to="." method="_on_next_hat_pressed"]

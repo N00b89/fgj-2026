@@ -1,9 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://c734nl3cji18g"]
+[gd_scene load_steps=6 format=3 uid="uid://c734nl3cji18g"]
 
 [ext_resource type="Script" uid="uid://f06ktw88owuf" path="res://Scripts/credits.gd" id="1_r18jl"]
+[ext_resource type="Texture2D" uid="uid://cot7jevf60sba" path="res://Assets/UI/Ground.png" id="2_7yuoi"]
+[ext_resource type="FontFile" uid="uid://bwvjampjv4gqs" path="res://Assets/UI/Art/Director-Regular.otf" id="2_405du"]
+[ext_resource type="Texture2D" uid="uid://w26ksyam5q41" path="res://Assets/UI/BG.png" id="3_4jk37"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_57drt"]
 
 [node name="Credits" type="CanvasLayer"]
 script = ExtResource("1_r18jl")
+
+[node name="Ground" type="Sprite2D" parent="."]
+modulate = Color(0.76661915, 0.7666197, 0.76661927, 1)
+z_index = 12
+z_as_relative = false
+position = Vector2(591.0658, 389.40002)
+rotation = -0.034906585
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("2_7yuoi")
+
+[node name="BG" type="Sprite2D" parent="."]
+modulate = Color(0.7877592, 0.78775924, 0.787759, 0.84705883)
+z_index = -5
+z_as_relative = false
+position = Vector2(588.06573, 331.4)
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("3_4jk37")
+
+[node name="Ground2" type="Sprite2D" parent="."]
+modulate = Color(0.50928617, 0.5092862, 0.509286, 1)
+z_index = 14
+z_as_relative = false
+position = Vector2(588, 612)
+rotation = -0.008726646
+scale = Vector2(1248, 166.99997)
+texture = SubResource("CanvasTexture_57drt")
 
 [node name="Back" type="Button" parent="."]
 anchors_preset = -1
@@ -11,23 +42,26 @@ anchor_right = 0.155
 anchor_bottom = 0.117000006
 offset_right = 0.44000244
 offset_bottom = 0.18399811
+theme_override_fonts/font = ExtResource("2_405du")
 theme_override_font_sizes/font_size = 30
 text = "Back"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Label" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -309.0625
-offset_top = -54.375
-offset_right = 309.0625
-offset_bottom = 54.375
+offset_left = -281.53125
+offset_top = -34.6875
+offset_right = 281.53125
+offset_bottom = 34.6875
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 25
-text = "Arda Karaköz - Narrative and gameplay designer
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_405du")
+theme_override_font_sizes/font_size = 24
+text = "Arda Karaköz - Programmer, SFX designer, 2D artist
 Janita Kiiskinen - 2D Artist, Character Designer
 Kevin Cabras - Programmer"
 

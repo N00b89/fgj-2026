@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bbli1rw7hvwa3" path="res://Scripts/speech_bubble.gd" id="1_jhvau"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6p6bn"]
-bg_color = Color(0.5370113, 0.5370113, 0.5370113, 1)
+bg_color = Color(1, 1, 1, 1)
 
 [node name="Speech Bubble" type="Label"]
 anchors_preset = -1
