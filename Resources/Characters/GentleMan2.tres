@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="NPCData" load_steps=3 format=3 uid="uid://uv1mvmigsavq"]
 
 [ext_resource type="Script" uid="uid://dftuwumnummdp" path="res://Scripts/NPCData.gd" id="1_u3pf6"]
-[ext_resource type="Texture2D" uid="uid://bqntrnuh45c1v" path="res://Illustration52 (2).png" id="2_u3pf6"]
+[ext_resource type="Texture2D" uid="uid://bqntrnuh45c1v" path="res://Assets/Characters/Art/Illustration52 (2).png" id="2_u3pf6"]
 
 [resource]
 script = ExtResource("1_u3pf6")
 npc_name = "FunnyMan"
 sprite = ExtResource("2_u3pf6")
+requestedTags = Array[String](["sport", "shirt", "cool"])
 metadata/_custom_type_script = "uid://dftuwumnummdp"

@@ -6,4 +6,5 @@
 [resource]
 script = ExtResource("1_k6xuc")
 sprite = ExtResource("2_0ydqm")
+includedTags = Array[String](["party", "cool", "pants", "white"])
 metadata/_custom_type_script = "uid://do1p6p8op2tn1"

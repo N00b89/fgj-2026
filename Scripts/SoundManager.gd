@@ -1,10 +1,10 @@
 extends Node
 
 @export var sounds: Dictionary = {
-	"step": {"stream": preload("res://sounds/fsfx-02.wav"), "volume": -15.0},
-	"step2": {"stream": preload("res://sounds/fsfx-03.wav"), "volume": -12.0},
-	"step3": {"stream": preload("res://sounds/fsfx-04.wav"), "volume": -15.0},
-	"flip": {"stream": preload("res://sounds/fsfx-03.wav"), "volume": 15.0},
+	"step": {"stream": preload("res://sounds/fsfx-02.wav"), "volume": -8.0},
+	"step2": {"stream": preload("res://sounds/fsfx-03.wav"), "volume": -5.0},
+	"step3": {"stream": preload("res://sounds/fsfx-04.wav"), "volume": -8.0},
+	"flip": {"stream": preload("res://sounds/fsfx-03.wav"), "volume": 12.0},
 	"classical1": {"stream": preload("res://sounds/classical_flash.wav"), "volume": -7.0}
 }
 func _ready():

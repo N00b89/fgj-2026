@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://kg7lgj65mpyk"]
+
+[ext_resource type="Script" uid="uid://bwlypyy1pcx4t" path="res://Scenes/GameManager.gd" id="1_fk8f4"]
+[ext_resource type="PackedScene" uid="uid://by8103nhxne8o" path="res://Scenes/CharacterPanel.tscn" id="2_rc418"]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_fk8f4")
+
+[node name="CharacterPanel" parent="." instance=ExtResource("2_rc418")]

@@ -63,8 +63,10 @@ func nullCheck(inp:ItemData) -> Texture2D:
 	else:
 		return inp.sprite
 var currentCharacterData : CharacterData
+var gameManager : GameManager
 
 func _ready():
+	gameManager = get_tree().current_scene as GameManager
 	print("Start??")
 	print("Start??")
 	_createCharacter(initData);
@@ -81,18 +83,42 @@ func _process(delta: float):
 		_setClothing(ClothingType.lowerbody,debugItem3)
 	if Input.is_action_just_pressed("Debug4"):
 		_setClothing(ClothingType.shoes,debugItem4)
+		
 func _completeDress():
+	
+
 	anim_player._exit()
 	await get_tree().create_timer(1.2).timeout
 	if(_processCharacterControl()):
 		print("Guy is chill")
 	else:
+		gameManager._loseHp()
 		print("Guy just died")
 	_createCharacter(npc_list[npcIndex])
 	npcIndex+=1
 	
 func _processCharacterControl() -> bool:
+	var allTags:Array[String];
+	checkAddItemToList(currentCharacterData.faceCloth, allTags)
+	checkAddItemToList(currentCharacterData.bodyCloth, allTags)
+	checkAddItemToList(currentCharacterData.lowerbodyCloth, allTags)
+	checkAddItemToList(currentCharacterData.shoeCloth, allTags)
+	
+	var required_tags: Array[String] = currentCharacterData.npcData.requestedTags;
+	
+	for tag in required_tags:
+		if not allTags.has(tag):
+			return false
+			
 	return true
+	
+func checkAddItemToList(inp:ItemData, ou:Array[String]):
+	if(inp == null):
+		return
+	for tag in inp.includedTags:
+		if not ou.has(tag):
+			ou.append(tag) 
+	
 	
 func _createCharacter(_data : NPCData):
 	currentCharacterData = CharacterData.new()
