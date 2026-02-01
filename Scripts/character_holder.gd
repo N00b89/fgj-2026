@@ -1,5 +1,6 @@
 extends Node
 
+
 enum ClothingType{
 		face,
 		body,
@@ -68,6 +69,7 @@ func _ready():
 	print("Start??")
 	print("Start??")
 	_createCharacter(initData);
+	$Countdown.start_timer()
 	print("Start2")
 
 func _process(delta: float):

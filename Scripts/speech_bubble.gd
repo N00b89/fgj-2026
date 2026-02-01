@@ -3,8 +3,8 @@ extends TextEdit
 var colors : Array = ["red", "blue", "black", "yellow"]
 var styles : Array = ["old", "modern", "elegant", "funny"]
 var hello : Array = ["Bonjour Monsieur! ", "Hi. ", "Hello. "]
-var first_middle : Array = ["I would like something ", "I like", "Give me something "]
-var second_middle : Array = [" and something ", " and ", " and something"]
+var first_middle : Array = ["I would like something ", "I like ", "Give me something "]
+var second_middle : Array = [" and something ", " and ", " and something "]
 var end : Array = ["! Be quick!", ". Don't disappoint me.", ". Good luck!"]
 
 func _ready() -> void:

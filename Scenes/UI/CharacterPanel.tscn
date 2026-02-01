@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://by8103nhxne8o"]
+[gd_scene load_steps=25 format=3 uid="uid://by8103nhxne8o"]
 
 [ext_resource type="Script" uid="uid://ddlmdgr862ekq" path="res://Scripts/character_holder.gd" id="1_k841r"]
 [ext_resource type="Script" uid="uid://7hjxcrkco6xw" path="res://Scripts/screenshake.gd" id="1_uj1fo"]
@@ -14,6 +14,9 @@
 [ext_resource type="Shader" uid="uid://4veedejpn06l" path="res://Shaders/Wiggly.gdshader" id="7_ogb8q"]
 [ext_resource type="Texture2D" uid="uid://b2r2mnq7bx6mj" path="res://Shaders/noise2.png" id="8_81w0h"]
 [ext_resource type="Texture2D" uid="uid://v3askt4420xf" path="res://Assets/Characters/Art/Illustration52 (3).png" id="10_ohmnt"]
+[ext_resource type="PackedScene" uid="uid://ciroa85oojkht" path="res://Scenes/UI/speech_bubble.tscn" id="15_wa6yj"]
+[ext_resource type="PackedScene" uid="uid://db45vl8y08ya7" path="res://Scenes/UI/time_limit.tscn" id="16_4tte2"]
+[ext_resource type="PackedScene" uid="uid://c86ugk62daqvo" path="res://Scenes/Misc/game_menu.tscn" id="17_4tte2"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ip5rw"]
 
@@ -277,3 +280,18 @@ texture = ExtResource("10_ohmnt")
 [node name="Lower_Cloth" type="Sprite2D" parent="CharacterHolder/AnimationPlayer/TransformParent/Sprite2D"]
 
 [node name="Shoe_Cloth" type="Sprite2D" parent="CharacterHolder/AnimationPlayer/TransformParent/Sprite2D"]
+
+[node name="Countdown" parent="CharacterHolder" instance=ExtResource("16_4tte2")]
+
+[node name="Speech Bubble" parent="CharacterHolder" instance=ExtResource("15_wa6yj")]
+anchor_left = 0.028430568
+anchor_right = 0.5294306
+anchor_bottom = 0.2022593
+offset_left = -580.752
+offset_top = -303.016
+offset_right = -579.90405
+offset_bottom = -303.06403
+metadata/_edit_use_anchors_ = true
+
+[node name="Game Menu" parent="." instance=ExtResource("17_4tte2")]
+visible = false
