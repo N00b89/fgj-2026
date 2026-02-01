@@ -165,6 +165,7 @@ _data = {
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Inventory" type="CanvasLayer" node_paths=PackedStringArray("hat_animation", "top_animation", "bottom_animation", "shoes_animation")]
+layer = 0
 script = ExtResource("1_dt15g")
 hats = ExtResource("2_14o23")
 tops = ExtResource("3_d513x")
@@ -177,14 +178,14 @@ shoes_animation = NodePath("GridContainer/Shoes/ShoesAnimation")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_as_relative = false
-position = Vector2(840.00006, 330)
+position = Vector2(866.9312, 329.0621)
 scale = Vector2(0.6086213, 0.72560555)
 texture = ExtResource("6_mnhd3")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
 z_index = 15
 z_as_relative = false
-position = Vector2(842, 167)
+position = Vector2(868.93115, 166.0621)
 scale = Vector2(0.47477227, 0.56556094)
 texture = ExtResource("7_or60b")
 
@@ -204,7 +205,7 @@ texture = ExtResource("8_aubfq")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 z_index = 15
-position = Vector2(841, 275)
+position = Vector2(867.93115, 274.0621)
 scale = Vector2(0.44649088, 0.6055603)
 texture = ExtResource("7_or60b")
 
@@ -224,7 +225,7 @@ texture = ExtResource("8_aubfq")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
 z_index = 15
-position = Vector2(843.99994, 392)
+position = Vector2(870.9311, 391.0621)
 scale = Vector2(0.47477227, 0.6455609)
 texture = ExtResource("7_or60b")
 
@@ -244,7 +245,7 @@ texture = ExtResource("8_aubfq")
 
 [node name="Sprite2D7" type="Sprite2D" parent="."]
 z_index = 15
-position = Vector2(842, 508)
+position = Vector2(868.93115, 507.06207)
 scale = Vector2(0.4541994, 0.5655597)
 texture = ExtResource("7_or60b")
 
@@ -264,7 +265,7 @@ texture = ExtResource("8_aubfq")
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
 z_index = 15
-position = Vector2(842, 601)
+position = Vector2(868.93115, 600.06213)
 scale = Vector2(0.5664909, 0.6855597)
 texture = ExtResource("9_kovtf")
 
@@ -274,10 +275,10 @@ anchor_left = 0.46831596
 anchor_top = 0.41743827
 anchor_right = 0.53168404
 anchor_bottom = 0.58256173
-offset_left = 190.50006
-offset_top = -146.5
-offset_right = 190.50006
-offset_bottom = -146.5
+offset_left = 217.43121
+offset_top = -147.4379
+offset_right = 217.43121
+offset_bottom = -147.4379
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(4.4623604, 4.0904307)
@@ -453,11 +454,11 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0, 1)
 theme_override_styles/normal = ExtResource("2_osrsm")
 text = ">"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 747.99994
-offset_top = 575.99994
-offset_right = 804.99994
-offset_bottom = 592.99994
+[node name="Done Button" type="Button" parent="."]
+offset_left = 774.9311
+offset_top = 575.062
+offset_right = 831.9311
+offset_bottom = 592.062
 rotation = -0.07477015
 scale = Vector2(3.1645572, 3.6899848)
 theme_override_fonts/font = ExtResource("12_x2jye")

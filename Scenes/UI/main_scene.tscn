@@ -1,11 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dolrnhyo7cagp"]
+[gd_scene load_steps=5 format=3 uid="uid://dolrnhyo7cagp"]
 
 [ext_resource type="PackedScene" uid="uid://grk800p8ytot" path="res://Scenes/UI/inventory.tscn" id="2_d0w03"]
 [ext_resource type="PackedScene" uid="uid://c86ugk62daqvo" path="res://Scenes/Misc/game_menu.tscn" id="2_sl5e4"]
+[ext_resource type="PackedScene" uid="uid://by8103nhxne8o" path="res://Scenes/CharacterPanel.tscn" id="3_d0w03"]
+[ext_resource type="PackedScene" uid="uid://bvay84xc4lpg3" path="res://Scenes/UI/CursorManager.tscn" id="4_6247q"]
 
 [node name="Main Scene" type="CanvasLayer"]
+
+[node name="CharacterPanel" parent="." instance=ExtResource("3_d0w03")]
+position = Vector2(-3, 62)
 
 [node name="Inventory" parent="." instance=ExtResource("2_d0w03")]
 
 [node name="Game Menu" parent="." instance=ExtResource("2_sl5e4")]
 visible = false
+
+[node name="CursorManager" parent="." instance=ExtResource("4_6247q")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(-15.375, 55.245)

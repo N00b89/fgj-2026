@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://by8103nhxne8o"]
+[gd_scene load_steps=35 format=3 uid="uid://by8103nhxne8o"]
 
 [ext_resource type="Script" uid="uid://ddlmdgr862ekq" path="res://Scripts/character_holder.gd" id="1_k841r"]
 [ext_resource type="Script" uid="uid://cvrrkv8c4pex7" path="res://Scenes/screenshake.gd" id="1_uj1fo"]
@@ -22,8 +22,82 @@
 [ext_resource type="Texture2D" uid="uid://b2r2mnq7bx6mj" path="res://Shaders/noise2.png" id="8_81w0h"]
 [ext_resource type="Texture2D" uid="uid://v3askt4420xf" path="res://Assets/Characters/Art/Illustration52 (3).png" id="10_ohmnt"]
 [ext_resource type="Shader" uid="uid://4veedejpn06l" path="res://Shaders/Wiggly.gdshader" id="11_o4fp0"]
+[ext_resource type="PackedScene" uid="uid://bvay84xc4lpg3" path="res://Scenes/UI/CursorManager.tscn" id="23_23y05"]
+[ext_resource type="PackedScene" uid="uid://c86ugk62daqvo" path="res://Scenes/Misc/game_menu.tscn" id="24_pnfgi"]
+[ext_resource type="PackedScene" uid="uid://grk800p8ytot" path="res://Scenes/UI/inventory.tscn" id="25_257w2"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nsh33"]
+
+[sub_resource type="Animation" id="Animation_uf00f"]
+resource_name = "Die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/TransformParent:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666, 0.73333335, 0.9, 1.0005785),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-250, 0), Vector2(-170, 0), Vector2(-80, 0), Vector2(40, 0), Vector2(90, 0), Vector2(200, 0), Vector2(200, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/TransformParent:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666, 0.73333335, 0.89942145, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.34906584, -0.34906584, 0.34906584, -0.34906584, 0.0, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333333, 0.36666667, 0.5666667, 0.73333335, 0.90000004, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": [],
+"method": &"_playStep"
+}, {
+"args": ["gunshot"],
+"method": &"_playStep"
+}, {
+"args": ["gunshot"],
+"method": &"_playSound"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer/TransformParent/Sprite2D/FlipOff:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_gp04v"]
 length = 0.001
@@ -202,77 +276,6 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_ghytx"]
 resource_name = "idle_state"
-
-[sub_resource type="Animation" id="Animation_uf00f"]
-resource_name = "Die"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/TransformParent:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666, 0.73333335, 0.9, 1.0005785),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(-250, 0), Vector2(-170, 0), Vector2(-80, 0), Vector2(40, 0), Vector2(90, 0), Vector2(200, 0), Vector2(200, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/TransformParent:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.36666667, 0.56666666, 0.73333335, 0.89942145, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0.0, 0.34906584, -0.34906584, 0.34906584, -0.34906584, 0.0, 0.0]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimationPlayer")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.13333333, 0.36666667, 0.5666667, 0.73333335, 0.90000004, 0.96666664),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"values": [{
-"args": [],
-"method": &"_playStep"
-}, {
-"args": [],
-"method": &"_playStep"
-}, {
-"args": [],
-"method": &"_playStep"
-}, {
-"args": [],
-"method": &"_playStep"
-}, {
-"args": [],
-"method": &"_playStep"
-}, {
-"args": ["gunshot"],
-"method": &"_playStep"
-}, {
-"args": ["gunshot"],
-"method": &"_playSound"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer/TransformParent/Sprite2D/FlipOff:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ogb8q"]
 _data = {
@@ -457,3 +460,11 @@ material = SubResource("ShaderMaterial_ip5rw")
 
 [node name="Shoe_Cloth" type="Sprite2D" parent="CharacterHolder/AnimationPlayer/TransformParent/Sprite2D"]
 material = SubResource("ShaderMaterial_ip5rw")
+
+[node name="Game Menu" parent="." instance=ExtResource("24_pnfgi")]
+visible = false
+
+[node name="Inventory" parent="." instance=ExtResource("25_257w2")]
+
+[node name="CursorManager" parent="Inventory" instance=ExtResource("23_23y05")]
+position = Vector2(-99, -126)

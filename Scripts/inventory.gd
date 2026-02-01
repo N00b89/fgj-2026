@@ -61,7 +61,7 @@ func _on_next_top_pressed() -> void:
 	if current_top - 1 > tops.items.size() - 1:
 		current_top = tops.items.size() - 1
 	else:
-		current_top -= 1
+		current_top += 1
 
 	top_animation.play("fade_in_left")
 	await top_animation.animation_finished
@@ -85,7 +85,7 @@ func _on_next_bottom_pressed() -> void:
 	if current_bottom - 1 > bottoms.items.size() - 1:
 		current_bottom = bottoms.items.size() - 1
 	else:
-		current_bottom -= 1
+		current_bottom += 1
 
 	bottom_animation.play("fade_in_left")
 	await bottom_animation.animation_finished
@@ -109,7 +109,7 @@ func _on_next_shoes_pressed() -> void:
 	if current_shoes - 1 > shoes.items.size() - 1:
 		current_shoes = shoes.items.size() - 1
 	else:
-		current_shoes -= 1
+		current_shoes += 1
 
 	shoes_animation.play("fade_in_left")
 	await shoes_animation.animation_finished

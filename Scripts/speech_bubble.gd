@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func sentence_randomizer() -> void:
 	var mood : int = randi_range(0, hello.size() - 1)
-	
+
 	text =  (hello[mood] + 
 			first_middle[mood] + 
 			colors[randi_range(0, colors.size() - 1)] + 

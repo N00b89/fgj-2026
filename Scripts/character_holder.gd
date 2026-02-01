@@ -108,7 +108,7 @@ func _completeDress():
 		_createCharacter(npc_list.pick_random())
 		npcIndex+=1
 
-	
+
 func _processCharacterControl() -> bool:
 	var allTags:Array[String];
 	checkAddItemToList(currentCharacterData.faceCloth, allTags)
