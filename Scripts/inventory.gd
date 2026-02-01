@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@export var characterPanel: CharacterHolder
 @export var hats : Array[ItemData]
 @export var tops : Array[ItemData]
 @export var bottoms : Array[ItemData]
@@ -15,7 +16,9 @@ var current_top : int = 0
 var current_bottom : int = 0
 var current_shoes : int = 0
 
+
 func _ready() -> void:
+	
 	%Hat.texture = hats[current_hat].sprite
 	%Top.texture = tops[current_top].sprite
 	%Bottom.texture = bottoms[current_bottom].sprite
@@ -30,6 +33,7 @@ func _on_previous_hat_pressed() -> void:
 	hat_animation.play("fade_in_left")
 	await hat_animation.animation_finished
 	%Hat.texture = hats[current_hat].sprite
+	characterPanel._setClothing(CharacterHolder.ClothingType.face,hats[current_hat])
 	hat_animation.play("fade_out_left")
 
 func _on_next_hat_pressed() -> void:
@@ -38,6 +42,7 @@ func _on_next_hat_pressed() -> void:
 	hat_animation.play("fade_in_right")
 	await hat_animation.animation_finished
 	%Hat.texture = hats[current_hat].sprite
+	characterPanel._setClothing(CharacterHolder.ClothingType.face,hats[current_hat])
 	hat_animation.play("fade_out_right")
 
 
@@ -49,6 +54,7 @@ func _on_previous_top_pressed() -> void:
 	top_animation.play("fade_in_left")
 	await top_animation.animation_finished
 	%Top.texture = tops[current_top].sprite
+	characterPanel._setClothing(CharacterHolder.ClothingType.body,tops[current_top])
 	top_animation.play("fade_out_left")
 
 func _on_next_top_pressed() -> void:
@@ -57,6 +63,7 @@ func _on_next_top_pressed() -> void:
 	top_animation.play("fade_in_right")
 	await top_animation.animation_finished
 	%Top.texture = tops[current_top].sprite
+	characterPanel._setClothing(CharacterHolder.ClothingType.body,tops[current_top])
 	top_animation.play("fade_out_right")
 
 
@@ -68,6 +75,7 @@ func _on_previous_bottom_pressed() -> void:
 	bottom_animation.play("fade_in_left")
 	await bottom_animation.animation_finished
 	%Bottom.texture = bottoms[current_bottom].sprite
+	characterPanel._setClothing(CharacterHolder.ClothingType.lowerbody,bottoms[current_bottom])
 	bottom_animation.play("fade_out_left")
 
 func _on_next_bottom_pressed() -> void:
@@ -76,6 +84,7 @@ func _on_next_bottom_pressed() -> void:
 	bottom_animation.play("fade_in_right")
 	await bottom_animation.animation_finished
 	%Bottom.texture = bottoms[current_bottom].sprite
+	characterPanel._setClothing(CharacterHolder.ClothingType.lowerbody,bottoms[current_bottom])
 	bottom_animation.play("fade_out_right")
 
 
@@ -87,6 +96,7 @@ func _on_previous_shoes_pressed() -> void:
 	shoes_animation.play("fade_in_left")
 	await shoes_animation.animation_finished
 	%Shoes.texture = shoes[current_shoes].sprite
+	characterPanel._setClothing(CharacterHolder.ClothingType.shoes,shoes[current_shoes])
 	shoes_animation.play("fade_out_left")
 
 func _on_next_shoes_pressed() -> void:
@@ -95,4 +105,5 @@ func _on_next_shoes_pressed() -> void:
 	shoes_animation.play("fade_in_right")
 	await shoes_animation.animation_finished
 	%Shoes.texture = shoes[current_shoes].sprite
+	characterPanel._setClothing(CharacterHolder.ClothingType.shoes,shoes[current_shoes])
 	shoes_animation.play("fade_out_right")

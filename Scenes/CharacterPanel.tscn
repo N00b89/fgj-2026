@@ -463,7 +463,8 @@ material = SubResource("ShaderMaterial_ip5rw")
 [node name="Game Menu" parent="." instance=ExtResource("24_pnfgi")]
 visible = false
 
-[node name="Inventory" parent="." instance=ExtResource("25_257w2")]
+[node name="Inventory" parent="." node_paths=PackedStringArray("characterPanel") instance=ExtResource("25_257w2")]
+characterPanel = NodePath("../CharacterHolder")
 hats = Array[ExtResource("24_wcsiq")]([ExtResource("4_ip5rw"), ExtResource("6_6act6")])
 tops = Array[ExtResource("24_wcsiq")]([ExtResource("5_o4fp0"), ExtResource("4_ip5rw")])
 bottoms = Array[ExtResource("24_wcsiq")]([ExtResource("6_6act6"), ExtResource("7_nsh33")])

@@ -1,5 +1,6 @@
 extends Node
 
+class_name CharacterHolder
 
 enum ClothingType{
 		face,
@@ -8,6 +9,7 @@ enum ClothingType{
 		shoes
 	}
 	
+
 @export var character_sprite: Sprite2D
 @export var initData: NPCData
 @export var debugItem1: ItemData
