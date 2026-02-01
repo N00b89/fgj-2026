@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://7iqf71yojh8i" path="res://Scenes/UI/cursor_manager.gd" id="1_to5m8"]
 [ext_resource type="Texture2D" uid="uid://ck65el7i413a0" path="res://Assets/UI/Art/cursor0.png" id="2_bfssl"]
 [ext_resource type="Texture2D" uid="uid://ddxx04gw70y5q" path="res://Assets/UI/Art/cursor1.png" id="3_s4wgc"]
-[ext_resource type="Shader" uid="uid://4veedejpn06l" path="res://Scenes/Wiggly.gdshader" id="4_s4wgc"]
+[ext_resource type="Shader" uid="uid://dqop6fgni0o8x" path="res://Scenes/Wiggly.gdshader" id="4_s4wgc"]
 [ext_resource type="Texture2D" uid="uid://b2r2mnq7bx6mj" path="res://Shaders/noise2.png" id="5_ofi3g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ofi3g"]

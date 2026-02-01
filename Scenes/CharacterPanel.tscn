@@ -1,7 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://by8103nhxne8o"]
+[gd_scene load_steps=24 format=3 uid="uid://by8103nhxne8o"]
 
 [ext_resource type="Script" uid="uid://ddlmdgr862ekq" path="res://Scripts/character_holder.gd" id="1_k841r"]
-[ext_resource type="Script" uid="uid://7hjxcrkco6xw" path="res://Scenes/screenshake.gd" id="1_uj1fo"]
+[ext_resource type="Script" uid="uid://cvrrkv8c4pex7" path="res://Scenes/screenshake.gd" id="1_uj1fo"]
 [ext_resource type="Script" uid="uid://47d2s2d2rcad" path="res://Scripts/AnimController.gd" id="3_ghytx"]
 [ext_resource type="Script" uid="uid://dftuwumnummdp" path="res://Scripts/NPCData.gd" id="3_gp04v"]
 [ext_resource type="Texture2D" uid="uid://cwgsj1rklt1ll" path="res://Assets/Characters/Art/Illustration52 (1).png" id="4_ghytx"]
@@ -11,9 +11,10 @@
 [ext_resource type="Resource" uid="uid://c2nhakb8pu5f3" path="res://Placeholders/Pants1.tres" id="6_6act6"]
 [ext_resource type="Resource" uid="uid://uv1mvmigsavq" path="res://Resources/Characters/GentleMan2.tres" id="6_81w0h"]
 [ext_resource type="Resource" uid="uid://bksiosijoqqy0" path="res://Placeholders/Shoes1.tres" id="7_nsh33"]
-[ext_resource type="Shader" uid="uid://4veedejpn06l" path="res://Scenes/Wiggly.gdshader" id="7_ogb8q"]
+[ext_resource type="Shader" uid="uid://dqop6fgni0o8x" path="res://Scenes/Wiggly.gdshader" id="7_ogb8q"]
 [ext_resource type="Texture2D" uid="uid://b2r2mnq7bx6mj" path="res://Shaders/noise2.png" id="8_81w0h"]
 [ext_resource type="Texture2D" uid="uid://v3askt4420xf" path="res://Assets/Characters/Art/Illustration52 (3).png" id="10_ohmnt"]
+[ext_resource type="Shader" uid="uid://4veedejpn06l" path="res://Shaders/Wiggly.gdshader" id="11_o4fp0"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ip5rw"]
 
@@ -207,7 +208,7 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_81w0h"]
-shader = ExtResource("7_ogb8q")
+shader = ExtResource("11_o4fp0")
 shader_parameter/noise_texture = ExtResource("8_81w0h")
 shader_parameter/noiseTiling = 1.77200008417
 shader_parameter/strength = 0.0070000003325
@@ -216,6 +217,7 @@ shader_parameter/frames = 4.000000142499999
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ip5rw"]
 shader = ExtResource("7_ogb8q")
+shader_parameter/noise_texture = ExtResource("8_81w0h")
 shader_parameter/noiseTiling = 0.298000014155
 shader_parameter/strength = 0.02000000095
 shader_parameter/speed = 2.98000014155

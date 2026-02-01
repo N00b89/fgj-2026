@@ -5,7 +5,7 @@ uniform sampler2D noise_texture : repeat_enable;
 uniform float noiseTiling : hint_range(0.0,5.0)=1.5;
 uniform float strength : hint_range(0.0,5.0)=1.5;
 uniform float speed : hint_range(0.0,20.0)=10.0;
-uniform float frames : hint_range(1.0,10.0)=5.0;
+uniform float frames : hint_range(1.0,10.0)=5.0; 
 
 void vertex() {
 }
@@ -20,7 +20,7 @@ void fragment() {
     offset.y = (noise_color.g - 0.5) * strength;
     // Bozunmuş UV'den rengi alıyoruz
     COLOR = texture(TEXTURE, UV + offset);
-}
+} 
 
 //void light() {
 //	// Called for every pixel for every light affecting the CanvasItem.
