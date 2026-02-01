@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://ciroa85oojkht"]
+[gd_scene load_steps=5 format=3 uid="uid://ciroa85oojkht"]
 
 [ext_resource type="FontFile" uid="uid://bwvjampjv4gqs" path="res://Assets/UI/Art/Director-Regular.otf" id="1_guhem"]
 [ext_resource type="Script" uid="uid://bbli1rw7hvwa3" path="res://Scripts/speech_bubble.gd" id="1_jhvau"]
+[ext_resource type="Texture2D" uid="uid://c4ev8x45a77aa" path="res://Assets/UI/Bubble.png" id="2_r5lct"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6p6bn"]
-bg_color = Color(0.5370113, 0.5370113, 0.5370113, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m0mij"]
+texture = ExtResource("2_r5lct")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [node name="Speech Bubble" type="Label"]
 anchors_preset = -1
@@ -18,7 +21,7 @@ offset_right = -0.2880249
 offset_bottom = -0.29600525
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_guhem")
-theme_override_styles/normal = SubResource("StyleBoxFlat_6p6bn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m0mij")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_jhvau")

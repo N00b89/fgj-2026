@@ -87,18 +87,27 @@ func _process(delta: float):
 		_setClothing(ClothingType.shoes,debugItem4)
 		
 func _completeDress():
+	var isWrong = false;
 	if(_processCharacterControl()):
 		print("Guy is chill")
 		anim_player._exit()
 	
 	else:
-		gameManager._loseHp()
+		isWrong = true
 		print("Guy just died")
 		anim_player._die()
 	await get_tree().create_timer(1.5).timeout
 	
-	_createCharacter(npc_list.pick_random())
-	npcIndex+=1
+	var dead = false
+	if(isWrong):
+		dead = gameManager._loseHp()
+		if(dead):
+			await get_tree().create_timer(2).timeout
+	
+	if(!dead):
+		_createCharacter(npc_list.pick_random())
+		npcIndex+=1
+
 	
 func _processCharacterControl() -> bool:
 	var allTags:Array[String];
