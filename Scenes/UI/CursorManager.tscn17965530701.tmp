@@ -15,7 +15,6 @@ shader_parameter/speed = 2.98000014155
 shader_parameter/frames = 4.000000142499999
 
 [node name="CursorManager" type="CanvasLayer"]
-layer = 2
 
 [node name="Node2D" type="Node2D" parent="." node_paths=PackedStringArray("cursorSprite")]
 script = ExtResource("1_to5m8")

@@ -22,6 +22,7 @@ CursorManager="*res://Scenes/UI/CursorManager.tscn"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [input]

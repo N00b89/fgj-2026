@@ -1,7 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://by8103nhxne8o"]
+[gd_scene load_steps=34 format=3 uid="uid://by8103nhxne8o"]
 
 [ext_resource type="Script" uid="uid://ddlmdgr862ekq" path="res://Scripts/character_holder.gd" id="1_k841r"]
-[ext_resource type="Script" uid="uid://cvrrkv8c4pex7" path="res://Scenes/screenshake.gd" id="1_uj1fo"]
 [ext_resource type="Texture2D" uid="uid://cot7jevf60sba" path="res://Assets/UI/Ground.png" id="2_6act6"]
 [ext_resource type="Texture2D" uid="uid://w26ksyam5q41" path="res://Assets/UI/BG.png" id="3_7jxdj"]
 [ext_resource type="Script" uid="uid://47d2s2d2rcad" path="res://Scripts/AnimController.gd" id="3_ghytx"]
@@ -22,8 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://b2r2mnq7bx6mj" path="res://Shaders/noise2.png" id="8_81w0h"]
 [ext_resource type="Texture2D" uid="uid://v3askt4420xf" path="res://Assets/Characters/Art/Illustration52 (3).png" id="10_ohmnt"]
 [ext_resource type="Shader" uid="uid://4veedejpn06l" path="res://Shaders/Wiggly.gdshader" id="11_o4fp0"]
-[ext_resource type="PackedScene" uid="uid://bvay84xc4lpg3" path="res://Scenes/UI/CursorManager.tscn" id="23_23y05"]
 [ext_resource type="PackedScene" uid="uid://c86ugk62daqvo" path="res://Scenes/Misc/game_menu.tscn" id="24_pnfgi"]
+[ext_resource type="Script" uid="uid://do1p6p8op2tn1" path="res://Scripts/ItemData.gd" id="24_wcsiq"]
 [ext_resource type="PackedScene" uid="uid://grk800p8ytot" path="res://Scenes/UI/inventory.tscn" id="25_257w2"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nsh33"]
@@ -304,10 +303,6 @@ shader_parameter/frames = 4.000000142499999
 
 [node name="CharacterPanel" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1, 0)
-script = ExtResource("1_uj1fo")
-
 [node name="Ground" type="Sprite2D" parent="."]
 modulate = Color(0.76661915, 0.7666197, 0.76661927, 1)
 z_index = 12
@@ -334,25 +329,29 @@ rotation = -0.008726646
 scale = Vector2(1248, 166.99998)
 texture = SubResource("CanvasTexture_nsh33")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-z_index = 15
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
 position = Vector2(289, -11)
 scale = Vector2(0.595, 0.595)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+z_index = 15
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("4_4jt8h")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D"]
 z_index = 15
-position = Vector2(306, 17.000008)
-scale = Vector2(0.7030944, 0.6855597)
+position = Vector2(28.571411, 47.05883)
+scale = Vector2(1.1816711, 1.152201)
 texture = ExtResource("5_uf00f")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D3"]
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D/Sprite2D3"]
 z_index = 15
 position = Vector2(169.2518, -11.669296)
 scale = Vector2(0.99999994, 1)
 texture = ExtResource("6_fww22")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D3"]
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D/Sprite2D3"]
 z_index = 15
 position = Vector2(-162.14035, 4.3759766)
 rotation = 3.0073845
@@ -360,19 +359,19 @@ scale = Vector2(1.202419, -1.2170503)
 skew = 0.006537199
 texture = ExtResource("6_fww22")
 
-[node name="Sprite2D5" type="Sprite2D" parent="."]
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D"]
 z_index = 15
-position = Vector2(306.00003, 139)
-scale = Vector2(0.7030944, 0.6855597)
+position = Vector2(28.571472, 252.10081)
+scale = Vector2(1.1816711, 1.152201)
 texture = ExtResource("5_uf00f")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D5"]
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D/Sprite2D5"]
 z_index = 15
 position = Vector2(169.2518, -11.669296)
 scale = Vector2(0.99999994, 1)
 texture = ExtResource("6_fww22")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D5"]
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D/Sprite2D5"]
 z_index = 15
 position = Vector2(-162.14035, 4.3759766)
 rotation = 3.0073845
@@ -380,31 +379,31 @@ scale = Vector2(1.202419, -1.2170503)
 skew = 0.006537199
 texture = ExtResource("6_fww22")
 
-[node name="Sprite2D6" type="Sprite2D" parent="."]
+[node name="Sprite2D6" type="Sprite2D" parent="Node2D"]
 z_index = 15
-position = Vector2(311, 249)
-scale = Vector2(0.7030944, 0.6855597)
+position = Vector2(36.974792, 436.97473)
+scale = Vector2(1.1816711, 1.152201)
 texture = ExtResource("7_wcsiq")
 
-[node name="Sprite2D7" type="Sprite2D" parent="."]
+[node name="Sprite2D7" type="Sprite2D" parent="Node2D"]
 z_index = 15
-position = Vector2(-241, -217.99998)
-scale = Vector2(0.7030944, 0.6855597)
+position = Vector2(-890.7562, -347.89908)
+scale = Vector2(1.1816711, 1.152201)
 texture = ExtResource("8_23y05")
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D"]
 z_index = 15
-position = Vector2(306, -108)
-scale = Vector2(0.7030944, 0.6855597)
+position = Vector2(28.571411, -163.02519)
+scale = Vector2(1.1816711, 1.152201)
 texture = ExtResource("5_uf00f")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D4"]
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D/Sprite2D4"]
 z_index = 15
 position = Vector2(169.2518, -11.669296)
 scale = Vector2(0.99999994, 1)
 texture = ExtResource("6_fww22")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D4"]
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D/Sprite2D4"]
 z_index = 15
 position = Vector2(-162.14035, 4.3759766)
 rotation = 3.0073845
@@ -465,9 +464,13 @@ material = SubResource("ShaderMaterial_ip5rw")
 visible = false
 
 [node name="Inventory" parent="." instance=ExtResource("25_257w2")]
+hats = Array[ExtResource("24_wcsiq")]([ExtResource("4_ip5rw"), ExtResource("6_6act6")])
+tops = Array[ExtResource("24_wcsiq")]([ExtResource("5_o4fp0"), ExtResource("4_ip5rw")])
+bottoms = Array[ExtResource("24_wcsiq")]([ExtResource("6_6act6"), ExtResource("7_nsh33")])
+shoes = Array[ExtResource("24_wcsiq")]([ExtResource("7_nsh33"), ExtResource("4_ip5rw")])
 
-[node name="CursorManager" parent="Inventory" instance=ExtResource("23_23y05")]
-position = Vector2(-99, -126)
+[node name="Sprite2D2" parent="Inventory" index="0"]
+position = Vector2(866.99994, 328)
 
 [connection signal="pressed" from="Inventory/GridContainer/Hat/Hat Selection" to="CharacterHolder" method="_on_hat_selection_pressed"]
 [connection signal="pressed" from="Inventory/GridContainer/Top/Top Selection" to="CharacterHolder" method="_on_top_selection_pressed"]

@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bwlypyy1pcx4t" path="res://Scenes/GameManager.gd" id="1_fk8f4"]
 [ext_resource type="PackedScene" uid="uid://by8103nhxne8o" path="res://Scenes/CharacterPanel.tscn" id="2_rc418"]
-[ext_resource type="PackedScene" uid="uid://dolrnhyo7cagp" path="res://Scenes/UI/main_scene.tscn" id="3_rc418"]
+[ext_resource type="Script" uid="uid://cvrrkv8c4pex7" path="res://Scenes/screenshake.gd" id="3_rc418"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_fk8f4")
 
 [node name="CharacterPanel" parent="." instance=ExtResource("2_rc418")]
 
-[node name="Main Scene" parent="." instance=ExtResource("3_rc418")]
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_rc418")

@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-@export var hats : Resource
-@export var tops : Resource
-@export var bottoms : Resource
-@export var shoes : Resource
+@export var hats : Array[ItemData]
+@export var tops : Array[ItemData]
+@export var bottoms : Array[ItemData]
+@export var shoes : Array[ItemData]
 
 @export var hat_animation : AnimationPlayer
 @export var top_animation : AnimationPlayer
@@ -16,102 +16,83 @@ var current_bottom : int = 0
 var current_shoes : int = 0
 
 func _ready() -> void:
-	%Hat.texture = hats.items[current_hat]
-	%Top.texture = tops.items[current_top]
-	%Bottom.texture = bottoms.items[current_bottom]
-	%Shoes.texture = shoes.items[current_shoes]
+	%Hat.texture = hats[current_hat].sprite
+	%Top.texture = tops[current_top].sprite
+	%Bottom.texture = bottoms[current_bottom].sprite
+	%Shoes.texture = shoes[current_shoes].sprite
 
+
+# ---------------- HATS ----------------
 
 func _on_previous_hat_pressed() -> void:
-	if current_hat - 1 < 0:
-		current_hat = hats.items.size() - 1
-	else:
-		current_hat -= 1
+	current_hat = (current_hat - 1 + hats.size()) % hats.size()
 
 	hat_animation.play("fade_in_left")
 	await hat_animation.animation_finished
-	%Hat.texture = hats.items[current_hat]
+	%Hat.texture = hats[current_hat].sprite
 	hat_animation.play("fade_out_left")
 
 func _on_next_hat_pressed() -> void:
-	if current_hat + 1 > hats.items.size() - 1:
-		current_hat = 0
-	else:
-		current_hat += 1
+	current_hat = (current_hat + 1) % hats.size()
 
 	hat_animation.play("fade_in_right")
 	await hat_animation.animation_finished
-	%Hat.texture = hats.items[current_hat]
+	%Hat.texture = hats[current_hat].sprite
 	hat_animation.play("fade_out_right")
 
 
+# ---------------- TOPS ----------------
 
 func _on_previous_top_pressed() -> void:
-	if current_top - 1 < 0:
-		current_top = tops.items.size() - 1
-	else:
-		current_top -= 1
+	current_top = (current_top - 1 + tops.size()) % tops.size()
 
 	top_animation.play("fade_in_left")
 	await top_animation.animation_finished
-	%Top.texture = tops.items[current_top]
+	%Top.texture = tops[current_top].sprite
 	top_animation.play("fade_out_left")
 
 func _on_next_top_pressed() -> void:
-	if current_top - 1 > tops.items.size() - 1:
-		current_top = tops.items.size() - 1
-	else:
-		current_top += 1
+	current_top = (current_top + 1) % tops.size()
 
-	top_animation.play("fade_in_left")
+	top_animation.play("fade_in_right")
 	await top_animation.animation_finished
-	%Top.texture = tops.items[current_top]
-	top_animation.play("fade_out_left")
+	%Top.texture = tops[current_top].sprite
+	top_animation.play("fade_out_right")
 
 
+# ---------------- BOTTOMS ----------------
 
 func _on_previous_bottom_pressed() -> void:
-	if current_bottom - 1 < 0:
-		current_bottom = bottoms.items.size() - 1
-	else:
-		current_bottom -= 1
+	current_bottom = (current_bottom - 1 + bottoms.size()) % bottoms.size()
 
 	bottom_animation.play("fade_in_left")
 	await bottom_animation.animation_finished
-	%Bottom.texture = bottoms.items[current_bottom]
+	%Bottom.texture = bottoms[current_bottom].sprite
 	bottom_animation.play("fade_out_left")
 
 func _on_next_bottom_pressed() -> void:
-	if current_bottom - 1 > bottoms.items.size() - 1:
-		current_bottom = bottoms.items.size() - 1
-	else:
-		current_bottom += 1
+	current_bottom = (current_bottom + 1) % bottoms.size()
 
-	bottom_animation.play("fade_in_left")
+	bottom_animation.play("fade_in_right")
 	await bottom_animation.animation_finished
-	%Bottom.texture = bottoms.items[current_bottom]
-	bottom_animation.play("fade_out_left")
+	%Bottom.texture = bottoms[current_bottom].sprite
+	bottom_animation.play("fade_out_right")
 
 
+# ---------------- SHOES ----------------
 
 func _on_previous_shoes_pressed() -> void:
-	if current_shoes - 1 < 0:
-		current_shoes = shoes.items.size() - 1
-	else:
-		current_shoes -= 1
+	current_shoes = (current_shoes - 1 + shoes.size()) % shoes.size()
 
 	shoes_animation.play("fade_in_left")
 	await shoes_animation.animation_finished
-	%Shoes.texture = shoes.items[current_shoes]
+	%Shoes.texture = shoes[current_shoes].sprite
 	shoes_animation.play("fade_out_left")
 
 func _on_next_shoes_pressed() -> void:
-	if current_shoes - 1 > shoes.items.size() - 1:
-		current_shoes = shoes.items.size() - 1
-	else:
-		current_shoes += 1
+	current_shoes = (current_shoes + 1) % shoes.size()
 
-	shoes_animation.play("fade_in_left")
+	shoes_animation.play("fade_in_right")
 	await shoes_animation.animation_finished
-	%Shoes.texture = shoes.items[current_shoes]
-	shoes_animation.play("fade_out_left")
+	%Shoes.texture = shoes[current_shoes].sprite
+	shoes_animation.play("fade_out_right")
